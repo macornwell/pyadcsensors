@@ -1,8 +1,6 @@
 import time
-from datetime import datetime
-from adc import ADCReader
-import RPi.GPIO as GPIO 
 import re
+from datetime import datetime
 
 
 class WaterFlowPrinter:
@@ -24,8 +22,8 @@ class YFS403:
     __zero = re.compile(r'^((0.00)|(4.096))')
     __window = re.compile(r'(?P<data>\d\.\d\d\d)')
 
-    def __init__(self, adc_position=0):
-        self.__adc_reader = ADCReader(adc_position)
+    def __init__(self, adc_reader)
+        self.__adc_reader = adc_reader
 
     def read_raw(self):
         return self.__adc_reader.read_volts()
@@ -95,21 +93,3 @@ class YFS403:
     def calculate_gallons_per_minute(self, hertz):
         lph = self.calculate_liters_per_minute(hertz)
         return lph / 3.78541
-
-
-
-def main():
-    device = YFS403()
-    printer = WaterFlowPrinter()
-    lines = []
-    try:
-        while True:
-            hertz = device.monitor_hertz(1)
-            print('Hertz: {0}'.format(hertz))
-            print('GPM: {0}'.format(device.calculate_gallons_per_minute(hertz)))
-    except KeyboardInterrupt:
-        pass
-
-
-if __name__ == '__main__':
-    main()
