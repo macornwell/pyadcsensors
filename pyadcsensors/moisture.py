@@ -2,7 +2,7 @@ import time
 from datetime import datetime
 from adc import ADCReader
 
-DRY = 0.05
+DRY = 0.09
 WET = 2.5
 
 def print_value(value):
@@ -19,7 +19,6 @@ def main():
         value = adc.read_volts()
         print_value(value)
         time.sleep(2)
-
 
 
 if __name__ == '__main__':

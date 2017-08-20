@@ -13,19 +13,6 @@ class PhotoResistor:
     def read_volts(self):
         return self.__adc_reader.read_volts()
 
-class PhotoResistorAnalysis:
-
-    def __init__(self):
-        pass
-
-    def is_dark(self, ground_resistor, value_in_volts):
-        """
-        Determines if a photoresistor reading is seeing darkness.
-        """
-
-
-
-
 def main():
     device = PhotoResistor()
     lines = []
