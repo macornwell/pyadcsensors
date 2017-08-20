@@ -22,7 +22,7 @@ class YFS403:
     __zero = re.compile(r'^((0.00)|(4.096))')
     __window = re.compile(r'(?P<data>\d\.\d\d\d)')
 
-    def __init__(self, adc_reader)
+    def __init__(self, adc_reader):
         self.__adc_reader = adc_reader
 
     def read_raw(self):
