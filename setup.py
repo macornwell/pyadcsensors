@@ -4,15 +4,11 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the relevant file
-with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
-    long_description = f.read()
-
 setup(
     name='pyadcsensors',
     version='0.0.1',
     description='Python based ADC Sensor library.',
-    long_description=long_description,
+    long_description='Python based ADC Sensor library.',
     url='https://github.com/macornwell/pyadcsensors.git',
     author='Mike Cornwell',
     author_email='michael.a.cornwell@gmail.com',
