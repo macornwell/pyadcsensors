@@ -37,5 +37,5 @@ class ADS1115Reader(ADCReader):
     """
 
     def __init__(self, position, gain=DEFAULT_GAIN):
-        super(self, ADCReader).__init__(position, Adafruit_ADS1x15.ADS1115(), gain=gain)
+        super().__init__(position, Adafruit_ADS1x15.ADS1115(), gain=gain)
 
