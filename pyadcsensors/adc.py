@@ -11,14 +11,6 @@ GAIN_TO_VOLTS = {
     16: 0.256,
 }
 
-class ADS1115(ADCReader):
-    """
-    An ADC Reader based around the ADS1115
-    """
-
-    def __init__(self, position, gain=DEFAULT_GAIN):
-        super(self, ADCReader).__init__(position, Adafruit_ADS1x15.ADS1115(), gain=gain)
-
 
 class ADCReader:
     low = 0
@@ -37,3 +29,13 @@ class ADCReader:
         value = self.read_raw()
         voltage = GAIN_TO_VOLTS[self.gain]
         return value * voltage / self.high
+
+
+class ADS1115Reader(ADCReader):
+    """
+    An ADC Reader based around the ADS1115
+    """
+
+    def __init__(self, position, gain=DEFAULT_GAIN):
+        super(self, ADCReader).__init__(position, Adafruit_ADS1x15.ADS1115(), gain=gain)
+
