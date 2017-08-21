@@ -64,8 +64,6 @@ class YFS403:
                 if going_up:
                     going_up = False
                     pulses += 1
-                    print('val: {0}'.format(val))
-                    print('cur: {0}'.format(current_pulse_value))
                 else:
                     # Do nothing. We're riding our way down.
                     pass

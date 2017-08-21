@@ -6,7 +6,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='pyadcsensors',
-    version='0.0.4',
+    version='0.0.5',
     description='Python based ADC Sensor library.',
     long_description='Python based ADC Sensor library.',
     url='https://github.com/macornwell/pyadcsensors.git',
